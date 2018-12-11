@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 import sys
 import os
-
-module_paths = [x[0] for x in os.walk( os.path.join(os.path.dirname(__file__), '.', '.env/lib/') ) if x[0].endswith('site-packages') ]
-for mp in module_paths:
-    sys.path.append(mp)
+sys.path.append('/usr/lib/python3.6/site-packages')
 
 from gevent import monkey
 monkey.patch_all()
